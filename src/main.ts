@@ -10,6 +10,13 @@ async function bootstrap() {
   // Get ConfigService
   const configService = app.get(ConfigService);
 
+  // Enable CORS
+  app.enableCors({
+    origin: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
+
   // Enable global prefix
   app.setGlobalPrefix('api');
 
